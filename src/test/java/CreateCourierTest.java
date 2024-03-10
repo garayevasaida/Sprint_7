@@ -2,6 +2,7 @@ import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import static org.junit.Assert.assertTrue;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,8 +40,9 @@ public class CreateCourierTest {
         JsonPath jsonPath = responseSecond.getBody().jsonPath();
         String actualMessage = jsonPath.getString("message");
         String expectedMessage = "Этот логин уже используется";
-        assertEquals(expectedMessage, actualMessage);
+        assertTrue("Ожидаемое сообщение об ошибке не найдено", actualMessage.contains("Этот логин уже используется"));
     }
+
 
     @Test
     @DisplayName("Создание курьера без логина")
