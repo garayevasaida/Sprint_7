@@ -4,7 +4,7 @@ public class Orders {
     protected String firstName;
     protected String lastName;
     protected String address;
-    protected String metroStation;
+    protected int metroStation;
     protected String phone;
     protected int rentTime;
     protected String deliveryDate;
@@ -35,11 +35,11 @@ public class Orders {
         this.address = address;
     }
 
-    public String getMetroStation() {
+    public int getMetroStation() {
         return metroStation;
     }
 
-    public void setMetroStation(String metroStation) {
+    public void setMetroStation(int metroStation) {
         this.metroStation = metroStation;
     }
 
@@ -83,7 +83,7 @@ public class Orders {
         this.color = color;
     }
 
-    public Orders(String firstName, String lastName, String address, String metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> color) {
+    public Orders(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> color) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
